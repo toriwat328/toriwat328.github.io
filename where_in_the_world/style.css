@@ -1,0 +1,38 @@
+main {
+    width: 100%
+}
+
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    z-index: 2
+    margin: 10px;
+    width: 100%;
+}
+
+
+
+iframe {
+    filter: grayscale();
+
+}
+
+img {
+    height: 400px;
+
+}
+
+.pictures {
+    display: flex;
+    box-sizing: border-box;
+    flex-basis: auto;
+    justify-content: space-around;
+}
+
+form {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 100px;
+}
