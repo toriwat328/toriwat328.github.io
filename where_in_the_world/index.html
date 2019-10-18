@@ -10,17 +10,92 @@
     </head>
     <body>
         <div class="container">
+
+<!-- Navigation -->
+
             <nav>
                 <h1>Where In the World Are You?</h1>
-                <button>Instructions</button>
+                <button id="openInstructions" class="modal-buttons">Instructions</button>
             </nav>
+
+<!-- Modal For Instructions for Game -->
+
+            <div class="modal">
+                <div class="modal-textbox">
+                    <h1>Where In The World Are You? Game</h1>
+                    <p>Oh no! You suddenly woke up and dont know where you are! You only have these 3 pictures and clues to determine your location. Submit your answers in the input box to see if its correct to get you to the next location! Good Luck!</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" class="modal-buttons">Play Game</button>
+                </div>
+            </div>
+
+<!-- Modal For Win on Try Scenario -->
+
+            <div class="modal" id="win-modal">
+                <div class="modal-textbox" id="modal-textbox-win">
+                    <h1>Correct!</h1>
+                    <!-- add a p tag in JS after win is determined saying Your In "Country" -->
+                    <div class="map">
+                        <iframe
+                             width="450"
+                             height="250"
+                             frameborder="0" style="border:0"
+                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Iceland" allowfullscreen>
+                         </iframe>
+                    </div>
+                    <div class="weather">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" class="modal-buttons"></button>
+                </div>
+            </div>
+
+<!-- Modal For After 3 Wrong Attempts -->
+
+            <div class="modal" id="modal-3-tries">
+                <div class="modal-textbox" id="modal-textbox-win">
+                    <h1>Nope!</h1>
+                    <!-- add a p tag in JS after 3 tries is determined saying Your In "Country" -->
+                    <div class="map">
+                        <iframe
+                             width="450"
+                             height="250"
+                             frameborder="0" style="border:0"
+                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Iceland" allowfullscreen>
+                         </iframe>
+                    </div>
+                    <div class="weather">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" class="modal-buttons"></button>
+                </div>
+            </div>
+
+<!-- Modal For Incorrect Attempt but Not After 3rd and Last Attempt -->
+
+            <div class="modal" id="modal-wrong">
+                <div class="modal-textbox" id="modal-textbox-win">
+                    <h1>Incorrect!</h1>
+                    <!-- add a p tag in JS after a wrong attempt but not after 3rd and last attempt-->
+                </div>
+                <div class="modal-footer">
+                    <button id="close" class="modal-buttons"></button>
+                </div>
+            </div>
+
+<!-- Main Div -->
+
             <main>
                 <div class="pictures">
-                    <img src="imgs/ICELAND1.JPG" alt="">
-                    <img src="imgs/ICELAND2.JPG" alt="">
-                    <img src="imgs/ICELAND3.JPG" alt="">
+                    <div class="pic1"></div>
+                    <div class="pic2"></div>
+                    <div class="pic3"></div>
                 </div>
 
+<!-- Submit Form -->
 
                 <form>
                     <input type="text" placeholder="Enter Country">
@@ -29,21 +104,16 @@
 
             </main>
 
+<!-- Footer Div -->
 
+            <footer>
+                <p>Contact Me</p>
+            </footer>
 
-
-
-
-
-
-
-         <!-- <iframe
-              width="450"
-              height="250"
-              frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Morocco" allowfullscreen>
-          </iframe> -->
           </div>
+
         <script src="app.js" charset="utf-8"></script>
+
     </body>
+
 </html>
