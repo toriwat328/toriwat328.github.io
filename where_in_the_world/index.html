@@ -20,7 +20,7 @@
 
 <!-- Modal For Instructions for Game -->
 
-            <div class="modal">
+            <div class="modal" id="instructions">
                 <div class="modal-textbox">
                     <h1>Where In The World Are You? Game</h1>
                     <p>Oh no! You suddenly woke up and dont know where you are! You only have these 3 pictures and clues to determine your location. Submit your answers in the input box to see if its correct to get you to the next location! Good Luck!</p>
@@ -35,6 +35,9 @@
             <div class="modal" id="win-modal">
                 <div class="modal-textbox" id="modal-textbox-win">
                     <h1>Correct!</h1>
+                    <div class="status">
+
+                    </div>
                     <!-- add a p tag in JS after win is determined saying Your In "Country" -->
                     <div class="map">
                         <iframe
@@ -101,6 +104,8 @@
                     <input type="text" placeholder="Enter Country">
                     <input type="submit" value="CHECK">
                 </form>
+
+
 
             </main>
 
