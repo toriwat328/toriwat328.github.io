@@ -35,10 +35,16 @@
             <div class="modal" id="win-modal">
                 <div class="modal-textbox" id="modal-textbox-win">
                     <h1>Correct!</h1>
-                    <div class="status">
+                    <div id="div-tobe-empty">
+                        <div id="status-win">
+                            <p>hi</p>
+                        </div>
+                        <!-- add a p tag in JS after win is determined saying Your In "Country" -->
 
+                        <div id="weather-win">
+                            
+                        </div>
                     </div>
-                    <!-- add a p tag in JS after win is determined saying Your In "Country" -->
                     <div class="map">
                         <iframe
                              width="450"
@@ -46,8 +52,6 @@
                              frameborder="0" style="border:0"
                              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Iceland" allowfullscreen>
                          </iframe>
-                    </div>
-                    <div class="weather">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -58,8 +62,11 @@
 <!-- Modal For After 3 Wrong Attempts -->
 
             <div class="modal" id="modal-3-tries">
-                <div class="modal-textbox" id="modal-textbox-win">
+                <div class="modal-textbox" id="modal-textbox-forcewin">
                     <h1>Nope!</h1>
+                    <div id="status-force">
+
+                    </div>
                     <!-- add a p tag in JS after 3 tries is determined saying Your In "Country" -->
                     <div class="map">
                         <iframe
@@ -82,6 +89,9 @@
             <div class="modal" id="modal-wrong">
                 <div class="modal-textbox" id="modal-textbox-win">
                     <h1>Incorrect!</h1>
+                    <div id="status-wrong">
+
+                    </div>
                     <!-- add a p tag in JS after a wrong attempt but not after 3rd and last attempt-->
                 </div>
                 <div class="modal-footer">
