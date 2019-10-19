@@ -103,12 +103,36 @@ $.ajax({
                 });
             } else if (userInput !== countries[i] && triesNum >= 3) {
                         userInput = countries[i]
+
+                        $('div#status-force').remove();
+                        $('div#weather-force').remove();
+                        const $div4 = $('<div>').attr('id', 'status-force').appendTo('#div-tobe-empty2');
+                        $('iframe').attr('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q='" + userInput);
+                        const $div5 = $('<div>').attr('id','weather-force').appendTo('#div-tobe-empty2');
+
+
+
                         $('#status-force').append('<p>Your In ' + countries[i] + '. But I forgive you. Go to the next round!</p>'); //will need to delete everything in modal when next round begins so need to add empty method and add all modal contents here.
-                        $('.weather').append(data.location.name).attr('id', 'cityName').append('<br/>'); // API is used to show weather city name for current country
-                        $('.weather').append(data.location.country).attr('id', 'country').append('<br/>'); // API shows country for current country being iterated
-                        $('.weather').append(data.current.temperature + ' Degrees').attr('id', 'temp').append('<br/>'); //API shows temp for current country being iterated
-                        $('.weather').append(data.current.weather_descriptions["0"]).attr('id', 'weather-descrip').append('<br/>');// API shows weather description
-                        $('.weather').append(data.current.weather_icons["0"]).attr('id', 'weather-icon').append('<br/>'); //need to make weather icon a img attr
+
+                        $$('div#weather-force').append('<p>' + data.location.name + '</p>') // API is used to show weather city name for current country
+                        $('div#weather-force').children().eq(0).attr('id', 'cityName')
+
+
+                        $('div#weather-force').append('<p>' + data.location.country + '</p>') // API shows country for current country being iterated
+                        $('div#weather-force').children().eq(1).attr('id', 'country')
+
+
+                        $('div#weather-force').append('<p>' + data.current.temperature + ' Degrees</p>')  //API shows temp for current country being iterated
+                        $('div#weather-force').children().eq(2).attr('id', 'temp')
+
+
+                        $('div#weather-force').append('<p>' + data.current.weather_descriptions["0"] + '</p>');// API shows weather description
+                        $('div#weather-force').children().eq(3).attr('id', 'descrip')
+
+
+                        $('div#weather-force').append('<p>' + data.current.weather_icons["0"] + '</p>'); //need to make weather icon a img attr
+                        $('div#weather-force').children().eq(4).attr('id', 'weather-icon')
+
                         $('#modal-3-tries').show(500); // modal for when user wins will pop up automatically
                             $('.modal-buttons').on('click', () => { //when user clicks close button
                                 $('#modal-3-tries').hide(400); // the win modal will hide
