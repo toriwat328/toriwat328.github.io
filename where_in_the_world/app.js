@@ -1,9 +1,9 @@
 const countries = ['ICELAND', 'MOROCCO', 'AUSTRIA']
 
-const openInstructions = $('#openInstructions').on('click', () => {
-                            $('#instructions').show(500);
-                                $('#close').on('click', () => {
-                                    $('#instructions').hide(400);
+ $('#openInstructions').on('click', () => {
+        $('#instructions').show(500);
+            $('#close').on('click', () => {
+                $('#instructions').hide(400);
         })
 })
 
@@ -44,6 +44,7 @@ $.ajax({
 
                 });
         }else if (userInput !== countries[i]) {
+            $('.status').append('<p>Try Again</p>');
             $('#modal-wrong').show(500);
                 $('.modal-buttons').on('click', () => {
                     $('#modal-wrong').hide(400);
@@ -52,8 +53,10 @@ $.ajax({
                                 $('.pic1').css('background-image', 'url("imgs/' + countries[i+1] +'1.JPG")');
                                 $('.pic2').css('background-image', 'url("imgs/' + countries[i+1] +'2.JPG")');
                                 $('.pic3').css('background-image', 'url("imgs/' + countries[i+1] +'3.JPG")');
-        }
+                            })
 
+                    });
+            }
 
     },
     () => {
