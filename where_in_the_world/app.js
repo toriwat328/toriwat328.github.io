@@ -104,6 +104,7 @@ $.ajax({
                         }else {
 
                         }
+
                         $('button#next_button').remove();
                         $('main').append('<button>Next Round</button>');
                         $('main').children('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
@@ -139,44 +140,53 @@ $.ajax({
 
                 $('#status-force').append('<p>Your In ' + countries[i] + '. But I forgive you. Go to the next round!</p>'); //will need to delete everything in modal when next round begins so need to add empty method and add all modal contents here.
 
-                $('div#weather-force').append('<p>' + data.location.name + '</p>') // API is used to show weather city name for current country
-                $('div#weather-force').children().eq(0).attr('id', 'cityName')
-
-
-                $('div#weather-force').append('<p>' + data.location.country + '</p>') // API shows country for current country being iterated
-                $('div#weather-force').children().eq(1).attr('id', 'country')
-
-
-                $('div#weather-force').append('<p>' + data.current.temperature + ' Degrees</p>')  //API shows temp for current country being iterated
-                $('div#weather-force').children().eq(2).attr('id', 'temp')
-
-
-                $('div#weather-force').append('<p>' + data.current.weather_descriptions["0"] + '</p>');// API shows weather description
-                $('div#weather-force').children().eq(3).attr('id', 'descrip')
-
-
-                $('div#weather-force').append('<p>' + data.current.weather_icons["0"] + '</p>'); //need to make weather icon a img attr
-                $('div#weather-force').children().eq(4).attr('id', 'weather-icon')
+                // $('div#weather-force').append('<p>' + data.location.name + '</p>') // API is used to show weather city name for current country
+                // $('div#weather-force').children().eq(0).attr('id', 'cityName')
+                //
+                //
+                // $('div#weather-force').append('<p>' + data.location.country + '</p>') // API shows country for current country being iterated
+                // $('div#weather-force').children().eq(1).attr('id', 'country')
+                //
+                //
+                // $('div#weather-force').append('<p>' + data.current.temperature + ' Degrees</p>')  //API shows temp for current country being iterated
+                // $('div#weather-force').children().eq(2).attr('id', 'temp')
+                //
+                //
+                // $('div#weather-force').append('<p>' + data.current.weather_descriptions["0"] + '</p>');// API shows weather description
+                // $('div#weather-force').children().eq(3).attr('id', 'descrip')
+                //
+                //
+                // $('div#weather-force').append('<p>' + data.current.weather_icons["0"] + '</p>'); //need to make weather icon a img attr
+                // $('div#weather-force').children().eq(4).attr('id', 'weather-icon')
 
                 $('#modal-3-tries').show(500); // modal for when user wins will pop up automatically
-                    $('.#close2').on('click', () => { //when user clicks close button
+                    $('#close2').on('click', () => { //when user clicks close button
                         $('#modal-3-tries').hide(400); // the win modal will hide
+                        if(round === 3) {
+                                $('#you-won-modal').show(500);
+                                $('#close4').on('click', () => {
+                                    $('.you-won-modal').hide(400);
+                                    location.reload();
+                            })
+                        }else {
 
+                        }
+                    
+                        $('button#next_button').remove();
                         $('main').append('<button>Next Round</button>');
-                        $('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
+                        $('main').children('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
                             $('button#next_button').on('click', (event) => { // on click of next round button, the images shown will change to the next country imags in array
                                 i++ //increase index in array
 
                                 $('.pic1').css('background-image', 'url("imgs/' + countries[i] +'1.JPG")');
                                 $('.pic2').css('background-image', 'url("imgs/' + countries[i] +'2.JPG")');
                                 $('.pic3').css('background-image', 'url("imgs/' + countries[i] +'3.JPG")');
-                                round++; //when next button is clicked user goes to next round
+                                round+=1;//when next button is clicked user goes to next round
+                                console.log(round);
                                 triesNum = 3;
                                 $('form').removeClass('clicked');
                                 $(event.currentTarget).remove();
                                 $(this).remove();
-                                // if in round 1, restart process of form submit with 2nd element in countries array
-                                // if in round 2, restart process of form submit with 3rd element in countries array
 
 
 
