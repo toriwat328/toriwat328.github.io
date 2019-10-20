@@ -34,7 +34,12 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     height: 400px;
-    width: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .pic2 {
@@ -42,7 +47,12 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     height: 400px;
-    width: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .pic3 {
@@ -50,31 +60,43 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     height: 400px;
-    width: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    box-sizing: border-box;
 }
 
-.pic1:hover {
-    background-image: url('imgs/ICELAND1.JPG');
-    background-size: contain;
-    background-repeat: no-repeat;
+#overlay-contain1, #overlay-contain2, #overlay-contain3 {
+    position: absolute;
+    box-sizing: border-box;
     height: 400px;
-    width: 30%;
+    width: 400px;
+    top: 0;
+    bottom: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    box-sizing: border-box;
+
+    transition: opacity .2s, visibility .2s;
 }
 
-.pic2:hover {
-    background-image: url('imgs/ICELAND2.JPG');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 30%;
+.pic1:hover #overlay-contain1 {
+    visibility: visible;
+    opacity: 1;
 }
 
-.pic3:hover {
-    background-image: url('imgs/ICELAND3.JPG');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 30%;
+.pic2:hover #overlay-contain2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.pic3:hover #overlay-contain3 {
+    visibility: visible;
+    opacity: 1;
 }
 
 form {

@@ -1,5 +1,11 @@
 const countries = ['ICELAND', 'MOROCCO', 'AUSTRIA']; //made an array of names of countries to be iterated over throughout the game
 
+const facts = [
+                ['Know for their cute horses', 'There are no mosquitos here', '80% of the country is uninhabited'],
+                ['The Sahara Desert is within this country', 'Their currency is the Dirham', 'Yves Saint Laurent had a home here'],
+                ['This coutry has one of the oldest national flags in the world', 'The first postcards were used here', 'The hills are alive here']
+            ];
+
 let round = 1; //Game starts on round 1
 
 let triesNum = 3; //Each round, a user has 3 tries
@@ -21,6 +27,17 @@ $('#openInstructions').on('click', () => { //event handeler where on click the i
 })
 
 $('main').prepend('<p>Round ' + round +'</p>')
+
+
+$('#overlay-contain1').append('<p>' + facts[0][0] + '</p>')
+$('#overlay-contain2').append('<p>' + facts[0][1] + '</p>')
+$('#overlay-contain3').append('<p>' + facts[0][2] + '</p>')
+
+
+
+
+
+
 
 $('form').on('submit', (event) => { // when user submits form,
     event.preventDefault() //prevent default reload after submit
@@ -90,7 +107,7 @@ $.ajax({
 
                 $('div#weather-win').append('<img>')
                 $('div#weather-win').children('img').attr('src',  data.current.weather_icons["0"]).attr('id', 'weather-icon'); //need to make weather icon a img attr
-                
+
 
                 $('#win-modal').show(500); // modal for when user wins will pop up automatically
                     $('#close1').on('click', () => { //when user clicks close button
@@ -114,8 +131,20 @@ $.ajax({
 
 
                                 $('.pic1').css('background-image', 'url("imgs/' + countries[i] +'1.JPG")');
+
+                                $('#overlay-contain1').children('p').remove();
+                                $('#overlay-contain1').append('<p>' + facts[i][0] + '</p>')
+
                                 $('.pic2').css('background-image', 'url("imgs/' + countries[i] +'2.JPG")');
+
+                                $('#overlay-contain2').children('p').remove();
+                                $('#overlay-contain2').append('<p>' + facts[i][1] + '</p>')
+
                                 $('.pic3').css('background-image', 'url("imgs/' + countries[i] +'3.JPG")');
+
+                                $('#overlay-contain3').children('p').remove();
+                                $('#overlay-contain3').append('<p>' + facts[i][2] + '</p>')
+
                                 round+=1;//when next button is clicked user goes to next round
                                 console.log(round);
                                 $('main').children('p').remove();
@@ -149,30 +178,6 @@ $.ajax({
                         $('#modal-3-tries').hide(400); // the win modal will hide
                                     location.reload();
                             })
-
-                //         $('button#next_button').remove();
-                //         $('main').append('<button>Next Round</button>');
-                //         $('main').children('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
-                //             $('button#next_button').on('click', (event) => { // on click of next round button, the images shown will change to the next country imags in array
-                //                 i++ //increase index in array
-                //
-                //                 $('.pic1').css('background-image', 'url("imgs/' + countries[i] +'1.JPG")');
-                //                 $('.pic2').css('background-image', 'url("imgs/' + countries[i] +'2.JPG")');
-                //                 $('.pic3').css('background-image', 'url("imgs/' + countries[i] +'3.JPG")');
-                //                 round+=1;//when next button is clicked user goes to next round
-                //                 console.log(round);
-                //                 triesNum = 3;
-                //                 $('form').removeClass('clicked');
-                //                 $(event.currentTarget).remove();
-                //                 $(this).remove();
-                //
-                //
-                //
-                //
-                // });
-                //
-                //
-                //     });
 
                 } else if (userInput !== countries[i]) { //After form is submitted, if userInput is not equal to current country being iterated, they are incorrect and the following will happen...
 
