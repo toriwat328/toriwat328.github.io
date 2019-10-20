@@ -107,6 +107,7 @@ $.ajax({
 
                 $('div#weather-win').append('<img>')
                 $('div#weather-win').children('img').attr('src',  data.current.weather_icons["0"]).attr('id', 'weather-icon'); //need to make weather icon a img attr
+                $('img#weather-icon').css('height', '50px')
 
 
                 $('#win-modal').show(500); // modal for when user wins will pop up automatically
