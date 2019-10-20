@@ -20,12 +20,14 @@ $('#openInstructions').on('click', () => { //event handeler where on click the i
        })
 })
 
+// $('main').prepend('<p>Round ' + round +'</p>')
 
 $('form').on('submit', (event) => { // when user submits form,
     event.preventDefault() //prevent default reload after submit
     triesNum--;
 
-
+$('main').children('p').remove();
+$('main').prepend('<p>Round ' + round +'</p>')
 
 
 
@@ -94,21 +96,26 @@ $.ajax({
                     $('#close1').on('click', () => { //when user clicks close button
                         $('#win-modal').hide(400); // the win modal will hide
                         if(round === 3) {
-                            $('.you-won-modal').show(500);
-                            $('#close4').on('click', () => {
-                                $('.you-won-modal').show(400);
+                                $('#you-won-modal').show(500);
+                                $('#close4').on('click', () => {
+                                    $('.you-won-modal').hide(400);
+                                    location.reload();
                             })
+                        }else {
+
                         }
+                        $('button#next_button').remove();
                         $('main').append('<button>Next Round</button>');
-                        $('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
+                        $('main').children('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
                             $('button#next_button').on('click', (event) => { // on click of next round button, the images shown will change to the next country imags in array
                                 i++ //increase index in array
 
                                 $('.pic1').css('background-image', 'url("imgs/' + countries[i] +'1.JPG")');
                                 $('.pic2').css('background-image', 'url("imgs/' + countries[i] +'2.JPG")');
                                 $('.pic3').css('background-image', 'url("imgs/' + countries[i] +'3.JPG")');
-                                round++ //when next button is clicked user goes to next round
-                                triesNum = 3
+                                round+=1;//when next button is clicked user goes to next round
+                                console.log(round);
+                                triesNum = 3;
                                 $('form').removeClass('clicked');
                                 $(event.currentTarget).remove();
                                 $(this).remove();
@@ -163,8 +170,8 @@ $.ajax({
                                 $('.pic1').css('background-image', 'url("imgs/' + countries[i] +'1.JPG")');
                                 $('.pic2').css('background-image', 'url("imgs/' + countries[i] +'2.JPG")');
                                 $('.pic3').css('background-image', 'url("imgs/' + countries[i] +'3.JPG")');
-                                round++ //when next button is clicked user goes to next round
-                                triesNum = 3
+                                round++; //when next button is clicked user goes to next round
+                                triesNum = 3;
                                 $('form').removeClass('clicked');
                                 $(event.currentTarget).remove();
                                 $(this).remove();
