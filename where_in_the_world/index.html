@@ -1,159 +1,159 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>Where In The World Are You?</title>
-        <link href="https://fonts.googleapis.com/css?family=Bangers|Playfair+Display:400,700,900|Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Where In The World Are You?</title>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Playfair+Display:400,700,900|Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
 
-    </head>
-    <body>
-        <div class="container">
+</head>
+<body>
+    <div class="container">
 
-            <div class="header">
-                <h1>WHERE</h1>
-                <h2>IN THE WORLD</h2>
-                 <h1>ARE YOU?</h1>
+        <div class="header">
+            <h1>WHERE</h1>
+            <h2>IN THE WORLD</h2>
+            <h1>ARE YOU?</h1>
+        </div>
+
+        <!-- Navigation -->
+
+        <nav>
+            <h1>Where In the World Are You?</h1>
+            <button id="openInstructions" class="modal-buttons">Instructions</button>
+        </nav>
+
+        <!-- Modal For Instructions for Game -->
+
+        <div class="modal" id="instructions">
+            <div class="modal-textbox" id="instruct-modal-text">
+                <h1>Where In The World Are You? Game</h1>
+                <p>Oh no! You suddenly woke up and dont know where you are! You only have these 3 pictures and clues to determine your location. Submit your answers in the input box to see if its correct to get you to the next location and ultimately back home!</br> Good Luck!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close" class="modal-buttons">Play Game</button>
+            </div>
+        </div>
+
+        <!-- Modal For Win on Try Scenario -->
+
+        <div class="modal" id="win-modal">
+            <div class="modal-textbox" id="modal-textbox-win">
+                <h1>Correct!</h1>
+                <div id="div-tobe-empty">
+                    <div id="status-win">
+                        <p>hi</p>
+                    </div>
+                    <!-- add a p tag in JS after win is determined saying Your In "Country" -->
+
+                    <div id="weather-win">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe
+                    width="375"
+                    height="400"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Iceland" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="close1" class="modal-buttons">Continue</button>
+        </div>
+    </div>
+
+    <!-- Modal For After 3 Wrong Attempts -->
+
+    <div class="modal" id="modal-3-tries">
+        <div class="modal-textbox" id="modal-textbox-forcewin">
+            <h1>Nope!</h1>
+            <div id="div-tobe-empty2">
+                <div id="status-force">
+
+                </div>
+
             </div>
 
-<!-- Navigation -->
+            <!-- add a p tag in JS after 3 tries is determined saying Your In "Country" -->
+        </div>
 
-            <nav>
-                <h1>Where In the World Are You?</h1>
-                <button id="openInstructions" class="modal-buttons">Instructions</button>
-            </nav>
+        <div class="modal-footer">
+            <button id="close2" class="modal-buttons">Restart Game</button>
+        </div>
+    </div>
 
-<!-- Modal For Instructions for Game -->
+    <!-- Modal For Incorrect Attempt but Not After 3rd and Last Attempt -->
 
-            <div class="modal" id="instructions">
-                <div class="modal-textbox" id="instruct-modal-text">
-                    <h1>Where In The World Are You? Game</h1>
-                    <p>Oh no! You suddenly woke up and dont know where you are! You only have these 3 pictures and clues to determine your location. Submit your answers in the input box to see if its correct to get you to the next location and ultimately back home!</br> Good Luck!</p>
+    <div class="modal" id="modal-wrong">
+        <div class="modal-textbox" id="modal-textbox-wrong">
+            <h1>Incorrect!</h1>
+            <div id="status-wrong">
+
+            </div>
+            <!-- add a p tag in JS after a wrong attempt but not after 3rd and last attempt-->
+        </div>
+        <div class="modal-footer">
+            <button id="close3" class="modal-buttons">Continue</button>
+        </div>
+    </div>
+
+
+    <div class="modal" id="you-won-modal">
+        <div class="modal-textbox" id="win-text">
+            <h1>Hooray!</h1>
+            <p>You Won! You traveled through Iceland, Morocco, and Austria and are finally heading home! Good Job! </p>
+        </div>
+        <div class="modal-footer">
+            <button id="close4" class="modal-buttons">Restart Game</button>
+        </div>
+    </div>
+    <!-- Main Div -->
+
+    <main>
+        <div class="round">
+
+        </div>
+        <div class="pictures">
+
+            <div class="pic1" >
+                <div id="overlay-contain1">
+
                 </div>
-                <div class="modal-footer">
-                    <button id="close" class="modal-buttons">Play Game</button>
+            </div>
+            <div class="pic2">
+                <div id="overlay-contain2">
+
+                </div>
+            </div>
+            <div class="pic3">
+                <div id="overlay-contain3">
+
                 </div>
             </div>
 
-<!-- Modal For Win on Try Scenario -->
+        </div>
 
-            <div class="modal" id="win-modal">
-                <div class="modal-textbox" id="modal-textbox-win">
-                    <h1>Correct!</h1>
-                    <div id="div-tobe-empty">
-                        <div id="status-win">
-                            <p>hi</p>
-                        </div>
-                        <!-- add a p tag in JS after win is determined saying Your In "Country" -->
+        <!-- Submit Form -->
 
-                        <div id="weather-win">
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                    <div class="map">
-                        <iframe
-                             width="375"
-                             height="400"
-                             frameborder="0" style="border:0"
-                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsnO8_jZ89RFL-22mqlWwVkJsMTYtRRzY&q=Iceland" allowfullscreen>
-                         </iframe>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id="close1" class="modal-buttons">Continue</button>
-                </div>
-            </div>
+        <form autocomplete="off">
+            <input type="text" placeholder="Enter Country" id='text'>
+            <input type="submit" value="CHECK" id='submit'/>
+        </form>
 
-<!-- Modal For After 3 Wrong Attempts -->
+        <div id="placeholder">
 
-            <div class="modal" id="modal-3-tries">
-                <div class="modal-textbox" id="modal-textbox-forcewin">
-                    <h1>Nope!</h1>
-                    <div id="div-tobe-empty2">
-                        <div id="status-force">
+        </div>
 
-                        </div>
+    </main>
 
-                    </div>
+</div>
 
-                    <!-- add a p tag in JS after 3 tries is determined saying Your In "Country" -->
-                    </div>
+<script src="app.js" charset="utf-8"></script>
 
-                <div class="modal-footer">
-                    <button id="close2" class="modal-buttons">Restart Game</button>
-                </div>
-            </div>
-
-<!-- Modal For Incorrect Attempt but Not After 3rd and Last Attempt -->
-
-            <div class="modal" id="modal-wrong">
-                <div class="modal-textbox" id="modal-textbox-wrong">
-                    <h1>Incorrect!</h1>
-                    <div id="status-wrong">
-
-                    </div>
-                    <!-- add a p tag in JS after a wrong attempt but not after 3rd and last attempt-->
-                </div>
-                <div class="modal-footer">
-                    <button id="close3" class="modal-buttons">Continue</button>
-                </div>
-            </div>
-
-
-            <div class="modal" id="you-won-modal">
-                <div class="modal-textbox" id="win-text">
-                    <h1>Hooray!</h1>
-                    <p>You Won! You traveled through Iceland, Morocco, and Austria and are finally heading home! Good Job! </p>
-                </div>
-                <div class="modal-footer">
-                    <button id="close4" class="modal-buttons">Restart Game</button>
-                </div>
-            </div>
-<!-- Main Div -->
-
-            <main>
-                <div class="round">
-
-                </div>
-                <div class="pictures">
-
-                    <div class="pic1" >
-                        <div id="overlay-contain1">
-
-                        </div>
-                    </div>
-                    <div class="pic2">
-                        <div id="overlay-contain2">
-
-                        </div>
-                    </div>
-                    <div class="pic3">
-                        <div id="overlay-contain3">
-
-                        </div>
-                    </div>
-
-                </div>
-
-<!-- Submit Form -->
-
-                <form autocomplete="off">
-                    <input type="text" placeholder="Enter Country" id='text'>
-                    <input type="submit" value="CHECK" id='submit'/>
-                </form>
-
-                <div id="placeholder">
-
-                </div>
-
-            </main>
-
-          </div>
-
-        <script src="app.js" charset="utf-8"></script>
-
-    </body>
+</body>
 
 </html>

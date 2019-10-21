@@ -292,12 +292,6 @@ div#status-win p {
     font-weight: 800;
 }
 
-/* div#weather-win {
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-} */
-
 div#weather-win p {
     line-height: 50%;
     text-align: center;
@@ -360,15 +354,11 @@ button#next_button {
     }
 
     input {
-
         font-size: 25px;
-
     }
 
     #submit {
-
         width: 100px;  height: 35px;
-
     }
 
     .modal-textbox {
@@ -378,11 +368,9 @@ button#next_button {
 
     .header {
         height: 550px;
-
     }
 
     .map {
-
         width: 200px;
         height: 500px;
     }
