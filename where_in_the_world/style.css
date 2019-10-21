@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid gold;
-}
+} */
 
 body {
     margin: 0;
@@ -12,24 +12,68 @@ container {
     margin: 0 auto;
 }
 
+.header {
+    height: 727px;
+    width: 100%;
+    text-align: center;
+    background-color: #FF5349;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 300px;
+    margin: 0;
+    color: #FFFFFF;
+
+}
+
+.header h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+
+}
+
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #F7F0F0;
 }
 
-main p {
+main h3 {
     text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    font-size: 25px;
+    font-weight: 900;
+
 }
 
 nav {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    z-index: 2
-    margin: 10px;
+    z-index: 2;
+    margin: 0px;
     width: 100%;
+    position: sticky; top: 0;
+    background-color: #252525;
+    align-items: center;
+    align-content: center;
+
+}
+
+nav h1 {
+    font-family: 'Bangers', sans-serif;
+    color: #FFFFFF;
+    padding-left: 10px;
+}
+
+nav button {
+    margin-right: 10px;
 }
 
 iframe {
@@ -68,6 +112,7 @@ div.pic1 {
     padding: 0;
     border: 0;
     position: relative;
+    border-radius: 4px;
 }
 
 .pic2 {
@@ -81,6 +126,7 @@ div.pic1 {
     border: 0;
     position: relative;
     box-sizing: border-box;
+    border-radius: 4px;
 }
 
 .pic3 {
@@ -94,6 +140,7 @@ div.pic1 {
     border: 0;
     position: relative;
     box-sizing: border-box;
+    border-radius: 4px;
 }
 
 #overlay-contain1, #overlay-contain2, #overlay-contain3 {
@@ -103,14 +150,14 @@ div.pic1 {
     width: 400px;
     top: 0;
     bottom: 0;
-    background: rgba(29, 106, 154, 0.72);
+    background: rgba(128, 128, 128, 0.72);
     color: #fff;
     visibility: hidden;
     opacity: 0;
     box-sizing: border-box;
-    margin: 10px
-
-    transition: opacity .2s, visibility .2s;
+    margin: 10px;
+    border-radius: 4px;
+    transition: opacity 1s, visibility 1s;
 }
 
 .pic1:hover #overlay-contain1 {
@@ -134,20 +181,27 @@ div.pic1 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-top: 200px;
+    align-items: center;
+    align-content: center;
+    padding-top: 100px;
     text-align: center;
+    font-family: 'Bangers', sans-serif;
+    font-size: 18px;
 }
 
 
 form {
     display: flex;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 50px;
 
 }
 
 input {
     margin-top: 50px;
     font-size: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #submit {
@@ -155,6 +209,11 @@ input {
     -moz-appearance: none;
     appearance: none;
     width: 200px;  height: 70px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#submit:hover {
+    background-color: #FF5349;
 }
 
 .modal {
@@ -173,7 +232,7 @@ input {
     background-color: white;
     height: 400px;
     width: 600px;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 150px auto;
     padding: 10px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -181,17 +240,27 @@ input {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
+    background-color: #FF5349;
+    color: #FFFFFF;
+    border: 5px solid #F7F0F0;
 }
 
 .modal-buttons {
-    padding: 14px 18px;
-    background: #677996;
+    height: 40px;
+    padding: 10px 14px;
+    background: #F7F0F0;
     border: none;
     outline: none;
     border-radius: 3px;
-    color: white;
-    font-family: 'Arial';
+    color: #252525;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
+
+}
+
+.modal-buttons:hover {
+    border: 3px solid #FF5349;
+    font-weight: 800;
 }
 
 img#weather_icon {
@@ -204,7 +273,8 @@ img#weather_icon {
     display: flex;
     justify-content: flex-end;
     width: 375px;
-    margin-left: 40px;
+    margin-left: 55px;
+    border-radius: 4px;
 
 
 }
@@ -214,8 +284,12 @@ img#weather_icon {
 }
 
 div#status-win p {
+    height: 120px;
     line-height: 590%;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: 800;
 }
 
 /* div#weather-win {
@@ -227,8 +301,98 @@ div#status-win p {
 div#weather-win p {
     line-height: 50%;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .modal-textbox > h1 {
     text-align: center;
+    font-family: 'Bangers', sans-serif;
+}
+
+div#modal-textbox-wrong p{
+    text-align: center;
+    line-height: 200%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+div#modal-textbox-forcewin p{
+    text-align: center;
+    line-height: 200%;
+    font-family: 'Roboto', sans-serif;
+}
+
+div#instruct-modal-text p{
+    text-align: center;
+    line-height: 200%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+div#win-text p{
+    text-align: center;
+    line-height: 200%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#weather-win {
+    background-color: #F7F0F0;
+    color: black;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    height: 140px;
+
+}
+
+#next_button {
+    width: 15%;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #252525
+    color: #FF5349;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 950px){
+    .header h1 {
+        font-size: 150px;
+    }
+
+    input {
+
+        font-size: 25px;
+
+    }
+
+    #submit {
+
+        width: 100px;  height: 35px;
+
+    }
+
+    .modal-textbox {
+        height: 600px;
+        width: 400px;
+}
+
+.header {
+    height: 550px;
+
+}
+
+.map {
+
+    width: 200px;
+    height: 500px;
+
+
+
+}
+
+iframe {
+    width: 200px;
+    height: 500px;
+}
+
 }

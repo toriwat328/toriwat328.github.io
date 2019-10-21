@@ -14,11 +14,6 @@ let i = 0;
 
 
 
-
-
-
-
-
 $('#openInstructions').on('click', () => { //event handeler where on click the instruction modal appears and disappears
        $('#instructions').show(500);
            $('#close').on('click', () => {
@@ -26,7 +21,7 @@ $('#openInstructions').on('click', () => { //event handeler where on click the i
        })
 })
 
-$('main').prepend('<p>Round ' + round +'</p>')
+$('main').prepend('<h3>Round ' + round +'</h3>')
 
 
 $('#overlay-contain1').append('<p>' + facts[0][0] + '</p>')
@@ -88,7 +83,7 @@ $.ajax({
 
 
 
-                $('#status-win').append('<p>Your In ' + countries[i] + '</p>'); //append p tag to tell user where they are
+                $('#status-win').append("<p>You're In " + countries[i] + "</p>"); //append p tag to tell user where they are
 
                 $('div#weather-win').append('<p>' + data.location.name + '</p>') // API is used to show weather city name for current country
                 $('div#weather-win').children().eq(0).attr('id', 'cityName')
@@ -148,8 +143,8 @@ $.ajax({
 
                                 round+=1;//when next button is clicked user goes to next round
                                 console.log(round);
-                                $('main').children('p').remove();
-                                $('main').prepend('<p>Round ' + round +'</p>')
+                                $('main').children('h3').remove();
+                                $('main').prepend('<h3>Round ' + round +'</h3>')
                                 triesNum = 3;
                                 $('form').removeClass('clicked');
                                 $(event.currentTarget).remove();
