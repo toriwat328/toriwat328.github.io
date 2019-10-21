@@ -1,9 +1,9 @@
 const countries = ['ICELAND', 'MOROCCO', 'AUSTRIA']; //made an array of names of countries to be iterated over throughout the game
 
 const facts = [
-                ['Know for their cute horses', 'There are no mosquitos here', '80% of the country is uninhabited'],
+                ['Known for their cute horses', 'There are no mosquitos here', '80% of the country is uninhabited'],
                 ['The Sahara Desert is within this country', 'Their currency is the Dirham', 'Yves Saint Laurent had a home here'],
-                ['This coutry has one of the oldest national flags in the world', 'The first postcards were used here', 'The hills are alive here']
+                ['This country has one of the oldest national flags in the world', 'The first postcards were used here', 'The hills are alive here']
             ];
 
 let round = 1; //Game starts on round 1
@@ -107,7 +107,7 @@ $.ajax({
 
                 $('div#weather-win').append('<img>')
                 $('div#weather-win').children('img').attr('src',  data.current.weather_icons["0"]).attr('id', 'weather-icon'); //need to make weather icon a img attr
-                $('img#weather-icon').css('height', '50px')
+                $('img#weather-icon').css('height', '50px').css('margin-left', '50px')
 
 
                 $('#win-modal').show(500); // modal for when user wins will pop up automatically
@@ -171,7 +171,7 @@ $.ajax({
 
 
 
-                $('#status-force').append('<p>Your In ' + countries[i] + '.</br> Sorry you lost the game!</br> I guess you will be stuck in '+ countries[i] + ' FOREVER! *evil laugh* </br> Just kidding! To restart game click the restart button below.</p>'); //will need to delete everything in modal when next round begins so need to add empty method and add all modal contents here.
+                $('#status-force').append('<p>Your In ' + countries[i] + '.</br> Sorry you lost the game!</br> I guess you will be stuck in '+ countries[i] + ' FOREVER! *evil laugh* </br> Just kidding! To restart game, click the restart button below.</p>'); //will need to delete everything in modal when next round begins so need to add empty method and add all modal contents here.
 
 
                 $('#modal-3-tries').show(500); // modal for when user wins will pop up automatically
