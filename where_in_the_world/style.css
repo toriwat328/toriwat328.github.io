@@ -16,7 +16,7 @@ container {
     height: 727px;
     width: 100%;
     text-align: center;
-    background-color: #FF5349;
+    background-color: #B0E0E6;
     box-sizing: border-box;
 }
 
@@ -213,7 +213,7 @@ input {
 }
 
 #submit:hover {
-    background-color: #FF5349;
+    background-color: #B0E0E6;
 }
 
 .modal {
@@ -240,7 +240,7 @@ input {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    background-color: #FF5349;
+    background-color: #B0E0E6;
     color: #FFFFFF;
     border: 5px solid #F7F0F0;
 }
@@ -259,7 +259,7 @@ input {
 }
 
 .modal-buttons:hover {
-    border: 3px solid #FF5349;
+    border: 3px solid #B0E0E6;
     font-weight: 800;
 }
 
@@ -345,12 +345,12 @@ div#win-text p{
 
 }
 
-#next_button {
-    width: 15%;
+button#next_button {
+    width: 10%;
     text-align: center;
     margin-bottom: 20px;
     background-color: #252525
-    color: #FF5349;
+    color: #B0E0E6;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -374,25 +374,22 @@ div#win-text p{
     .modal-textbox {
         height: 600px;
         width: 400px;
-}
+    }
 
-.header {
-    height: 550px;
+    .header {
+        height: 550px;
 
-}
+    }
 
-.map {
+    .map {
 
-    width: 200px;
-    height: 500px;
+        width: 200px;
+        height: 500px;
+    }
 
-
-
-}
-
-iframe {
-    width: 200px;
-    height: 500px;
-}
+    iframe {
+        width: 200px;
+        height: 500px;
+    }
 
 }
