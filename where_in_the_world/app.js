@@ -56,7 +56,7 @@ triesNum--;
     // }
 
 
-var url = 'http://api.weatherstack.com/current?access_key=987e40f5d0c5db5e98ec4246d66b6cd3&query=' + userInput
+var url = 'https://api.weatherstack.com/current?access_key=987e40f5d0c5db5e98ec4246d66b6cd3&query=' + userInput
 
 
 $.ajax({
