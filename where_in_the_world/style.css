@@ -393,4 +393,34 @@ button#next_button {
         height: 500px;
     }
 
+    .pic3 {
+        background-image: url('imgs/ICELAND3.JPG');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+        width: 400px;
+        margin: 10px;
+        padding: 0;
+        border: 0;
+        position: relative;
+        box-sizing: border-box;
+
+    }
+
+    #overlay-contain1, #overlay-contain2, #overlay-contain3 {
+        position: absolute;
+        box-sizing: border-box;
+        height: 400px;
+        width: 400px;
+        top: 0;
+        bottom: 0;
+        background: rgba(128, 128, 128, 0.72);
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        box-sizing: border-box;
+        margin: 0px;
+        transition: opacity 1s, visibility 1s;
+    }
+
 }
