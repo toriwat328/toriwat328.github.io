@@ -1,42 +1,42 @@
-#WHERE IN THE WORLD ARE YOU? (Guessing Game)
+# WHERE IN THE WORLD ARE YOU? (Guessing Game)
 
-##Project #1
+## Project #1
 
 
 My first project is a guessing game called 'Where in the World Are You?'. It combines my 3 passions: travel, my photography, and maps
 
 ***
 
-###Objective:
+### Objective:
 The objective of the game is that the user suddenly wakes up and don't know where they are but only have 3 pictures and 3 clues to help them figure out their location to get to the next round until they get back home.
 
 ***
 
-###The User Statements:
-    *Can click on the instructions to get a modal explaining how to play the game.
+### The User Statements:
+    * Can click on the instructions to get a modal explaining how to play the game.
 
-    *Can hover over each picture to reveal clues about the location
+    * Can hover over each picture to reveal clues about the location
 
-    *Once the user has an idea of where they are, they can type out the country they are in and click submit
+    * Once the user has an idea of where they are, they can type out the country they are in and click submit
 
-    *If the user is correct, a win modal will pop up automatically, telling the user that they are correct, showing a map of the location, and showing current weather in the location.
+    * If the user is correct, a win modal will pop up automatically, telling the user that they are correct, showing a map of the location, and showing current weather in the location.
 
-    *If the user is incorrect, a lose modal will pop up automatically, telling the user that they are incorrect and should try again
+    * If the user is incorrect, a lose modal will pop up automatically, telling the user that they are incorrect and should try again
 
-    *Users only have 3 chances to guess what country they are in. If it is the third try, a modal will pop up that they have lost the game and they can click the restart game button to reload page.
+    * Users only have 3 chances to guess what country they are in. If it is the third try, a modal will pop up that they have lost the game and they can click the restart game button to reload page.
 
-    *There are 3 rounds, so if the user guesses the 3 countries correct without running out of chances, a win modal will pop-up telling the user that they won the game and they can click restart game to reload page.
+    * There are 3 rounds, so if the user guesses the 3 countries correct without running out of chances, a win modal will pop-up telling the user that they won the game and they can click restart game to reload page.
 
 ***
 
 ###APIs Used:
-    *I used AJAX to pull the weatherstack API and show, city name, country, current temperature, current weather description, and weather_icon for the each country in a round, dynamically.
+    * I used AJAX to pull the weatherstack API and show, city name, country, current temperature, current weather description, and weather_icon for the each country in a round, dynamically.
 
-    *There were issues with CORS and HTTPS which made it very difficult to find a good API that would pull data locally and within github pages
+    * There were issues with CORS and HTTPS which made it very difficult to find a good API that would pull data locally and within github pages
 
-    *I also used Google Maps API for their free Maps Embed API to be shown in the win modal in addition to weather which is very cool.
+    * I also used Google Maps API for their free Maps Embed API to be shown in the win modal in addition to weather which is very cool.
 
-    *I realized that this is a client-side API in which you can not use AJAX, so because of that, I used weather in addition to this API.
+    * I realized that this is a client-side API in which you can not use AJAX, so because of that, I used weather in addition to this API.
 
 ***
 
