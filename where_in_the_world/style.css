@@ -25,6 +25,7 @@ container {
     font-size: 300px;
     margin: 0;
     color: #FFFFFF;
+    text-shadow: 1px 1px 2px #252525;
 
 }
 
@@ -32,6 +33,12 @@ container {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
 
+}
+
+#instruct-modal-text h1 {
+    line-height: 100%;
+    color: #252525;
+    text-shadow: none;
 }
 
 main {
@@ -301,6 +308,7 @@ div#weather-win p {
 .modal-textbox > h1 {
     text-align: center;
     font-family: 'Bangers', sans-serif;
+    text-shadow: 1px 1px 2px #252525;
 }
 
 div#modal-textbox-wrong p{
@@ -340,7 +348,11 @@ div#win-text p{
 }
 
 button#next_button {
-    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     text-align: center;
     margin-bottom: 20px;
     background-color: #252525
@@ -354,11 +366,11 @@ button#next_button {
     }
 
     input {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     #submit {
-        width: 100px;  height: 35px;
+        width: 80px;  height: 35px;
     }
 
     .modal-textbox {

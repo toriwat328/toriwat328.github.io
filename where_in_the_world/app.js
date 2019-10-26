@@ -133,6 +133,7 @@ $('form').on('submit', (event) => { // when user submits form,
                         $('button#next_button').remove(); // remove next buttom
                         $('main').append('<button>Next Round</button>'); //append new next button to main container
                         $('main').children('button').attr('id', 'next_button'); // once the modal is closed a button is made to go to next round
+                        $('button#next_button').css('background-color', '#B0E0E6')
                         $('button#next_button').on('click', (event) => { // on click of next round button, the images shown will change to the next country imags in array
                             i++ //increase index in array
 
