@@ -371,6 +371,7 @@ button#next_button {
 
     #submit {
         width: 80px;  height: 35px;
+        margin-left: 0;
     }
 
     .modal-textbox {
