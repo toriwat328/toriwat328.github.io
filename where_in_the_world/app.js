@@ -63,7 +63,7 @@ $('form').on('submit', (event) => { // when user submits form,
     const userInput = $('input[type="text"]').val().toUpperCase(); // text submitted is turned uppercase and saved in variable
 
 
-    var url = 'https://api.weatherstack.com/current?access_key=2ce76a3f94ff6a26395ccb836fde98b3&query=' + userInput //API URL + userInput is saved in variable
+    var url = 'https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=64bbacdd52284a3eeb086b28f652bbec&units=f&query=' + userInput //API URL + userInput is saved in variable
 
 
 //Using AJAX to access weatherstack data in API
